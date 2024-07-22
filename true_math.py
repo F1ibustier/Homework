@@ -1,3 +1,7 @@
+# Модули и пакеты
+# coded by f1ibustier
+
+
 from math import inf
 
 
