@@ -8,4 +8,3 @@ def divide(first, second):
     else:
         result = first / second
     return result
-
