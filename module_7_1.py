@@ -16,13 +16,14 @@ class Shop:
 
     def get_products(self):
         file = open(self.__file_name)
-        return file.read()
+        spisok_prod = file.read()
         file.close()
+        return spisok_prod
 
     def add(self, *products):
-        products = self.get_products()
+        prod = self.get_products()
         for i in products:
-            if self.get_products().find(f'{i}') is False:
+            if self.get_products().find(f'{i}') == -1:
                 file = open(self.__file_name, 'a')
                 file.write(f'{i}\n')
                 file.close()
