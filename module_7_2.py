@@ -6,7 +6,7 @@ def custom_write(file_name, strings):
     with open(file_name, 'w', encoding='utf-8') as file:
         for i, string in enumerate(strings, start=1):
             begin_byte = file.tell()
-            file.write(string + '\n')
+            file.write(f'{string}\n')
             strings_position[(i, begin_byte)] = string
     return strings_position
 
