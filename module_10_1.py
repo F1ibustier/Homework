@@ -1,7 +1,6 @@
 # Создание потоков
 # coded by f1ibustier
 import time
-from time import sleep
 from datetime import datetime
 from threading import Thread
 
@@ -28,9 +27,9 @@ print(time_res1)
 time_start2 = datetime.now()
 
 thr_1 = Thread(target=write_words, args=(10, 'example5.txt'))
-thr_2 = Thread(target=write_words(word_count=30, file_name='example6.txt'))
-thr_3 = Thread(target=write_words(word_count=20, file_name='example7.txt'))
-thr_4 = Thread(target=write_words(word_count=1, file_name='example8.txt'))
+thr_2 = Thread(target=write_words, args=(30, 'example6.txt'))
+thr_3 = Thread(target=write_words, args=(200, 'example7.txt'))
+thr_4 = Thread(target=write_words, args=(100, 'example8.txt'))
 
 thr_1.start()
 thr_2.start()
