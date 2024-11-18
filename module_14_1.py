@@ -14,11 +14,11 @@ age INTEGER,
 balance INTEGER NOT NULL
 )
 ''')
-# Заполните её 10 записями (закомментировал для одного заполнения):
+# Заполните её 10 записями:
 
-# for i in range(1, 11):
-#     cursor.execute('INSERT INTO Users(username, email, age, balance) VALUES(?, ?, ?, ?)',
-#                    (f'User{i}', f'example{i}@gmail.com', f'{i*10}', '1000'))
+for i in range(1, 11):
+    cursor.execute('INSERT INTO Users(username, email, age, balance) VALUES(?, ?, ?, ?)',
+                   (f'User{i}', f'example{i}@gmail.com', f'{i*10}', '1000'))
 
 # Обновите balance у каждой 2-ой записи начиная с 1-ой на 500:
 for i in range(1, 11, 2):
