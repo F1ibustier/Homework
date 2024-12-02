@@ -54,7 +54,7 @@ async def set_username(message, state):
     await state.update_data(username=message.text)
     user_data = await state.get_data()
     name = is_include(user_data['username'])
-    if name is True:
+    if name is False:
         await state.update_data(username=message.text)
         await message.answer("Введите свой email:")
         await RegistrationState.email.set()
