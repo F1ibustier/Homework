@@ -55,9 +55,9 @@ def is_include(username):
     check_user = cursor.execute('SELECT * FROM Users WHERE username=?', (username,))
     connection.commit()
     if check_user.fetchone() is None:
-        return True
-    else:
         return False
+    else:
+        return True
 
 
 initiate_db()
