@@ -14,6 +14,6 @@ async def admin_login() -> str:
 async def users_login(user_id: int) -> str:
     return f"Вы вошли как пользователь № {user_id}"
 
-@app.get("/user/")
+@app.get("/user")
 async def users_info(username: str, age: int) -> str:
     return f"Информация о пользователе. Имя: {username}, Возраст: {age}"
