@@ -32,7 +32,7 @@ def get_main_page(request: Request) -> HTMLResponse:
 @app.get('/user/{user_id}')
 async def get_user(request: Request, user_id: int) -> HTMLResponse:
     try:
-        return templates.TemplateResponse("users.html", {"request":request, "user": users[user_id]})
+        return templates.TemplateResponse("users.html", {"request":request, "user": users[user_id-1]})
     except IndexError:
         raise HTTPException(status_code=404, detail="User not found")
 
