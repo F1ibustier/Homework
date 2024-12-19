@@ -45,4 +45,4 @@ async def update_user(user_id: str,
 @app.delete('/user/{user_id}')
 async def delete_user(user_id: str):
     users.pop(user_id)
-    return f'User {user_id} deleted'
+    return f'User {user_id} has been deleted'
