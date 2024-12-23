@@ -62,7 +62,7 @@ async def put_user(user_id: Annotated[int, Path(ge=1,
         if user.id == user_id:
             user.username = username
             user.age = age
-            return f"The user {user_id} is updated."
+            return f"The user {user_id} is updated: {user}."
     raise HTTPException(status_code=404, detail="User was not found.")
 
 # 4. delete запрос по маршруту '/user/{user_id}', теперь:
@@ -76,5 +76,5 @@ async def delete_user(user_id: Annotated[int, Path(ge=1,
     for index, existing_user in enumerate(users):
         if existing_user.id == user_id:
             users.pop(index)
-            return f"User {user_id} deleted."
+            return f"User {user_id} deleted: {existing_user}."
     raise HTTPException(status_code=404, detail="User was not found")
